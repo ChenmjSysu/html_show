@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>show</title>
+	<meta charset="utf8" />
+	<link rel="stylesheet" href="/static/parse.css">
+</head>
+
+
+<body>
+	<table>
+		<tbody>
+			{% for line in result %}
+			<tr>
+				{% for cell in line %}
+				<td class="{{cell.class}}">
+					{% if cell.type == "string" %}
+					<p>{{cell.content}}</p>
+					{% elif cell.type == "image" %}
+					<img src="{{cell.content}}" />
+					{% elif cell.type == "video" %}
+					{% endif %}
+				</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
