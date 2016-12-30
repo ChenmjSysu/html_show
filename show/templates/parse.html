@@ -18,7 +18,7 @@
 					{% if cell.type == "string" %}
 					<p>{{cell.content}}</p>
 					{% elif cell.type == "image" %}
-					<img src="{{cell.content}}" />
+					<img src="file:///{{cell.content}}" />
 					{% elif cell.type == "video" %}
 					{% endif %}
 				</td>
